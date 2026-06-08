@@ -1,13 +1,10 @@
 {
-  "nom_du_site": "lol",
-  "sous_titre": "Coaching sportif personnalisé",
-  "titre_accueil": "Atteins tes objectifs avec un coach à tes côtés",
-  "texte_accueil": "Remise en forme, musculation, perte de poids et accompagnement adapté à ton niveau.",
-  "titre_a_propos": "Votre coach sportif",
-  "texte_a_propos": "Bonjour, je suis coach sportif. J’accompagne les personnes qui veulent reprendre le sport, progresser, perdre du poids ou gagner en confiance grâce à un programme simple et sérieux.",
-  "texte_contact": "Pour une séance découverte ou une question, contactez-moi directement.",
+  "nom_site": "Analyse du mouvement",
+  "sous_titre": "Ressources vidéo pour apprendre, corriger et progresser",
+  "professeur": "Prénom Nom",
+  "accroche": "Un espace simple pour les étudiants : exercices filmés, erreurs fréquentes, corrections techniques et ressources de cours.",
+  "bouton_principal": "Voir les exercices",
   "email": "email@example.com",
-  "telephone": "04 00 00 00 00",
-  "instagram": "@coach_sportif",
-  "instagram_url": "https://instagram.com/"
+  "intro_exercices": "Choisis une catégorie, observe la vidéo, compare les erreurs fréquentes et applique les consignes de correction.",
+  "message_prof": "Ce site sert de support pédagogique : il ne remplace pas le cours, mais aide à revoir les gestes, comprendre les corrections et préparer les séances."
 }
