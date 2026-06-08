@@ -15,7 +15,7 @@ content:
       - { name: bouton_principal, label: Texte du bouton principal, type: string }
       - { name: intro_exercices, label: Introduction de la page exercices, type: text }
       - { name: message_prof, label: Message pédagogique, type: text }
-       - { name: analyse_eyebrow, label: Petit titre de la méthode, type: string }
+      - { name: analyse_eyebrow, label: Petit titre de la méthode, type: string }
       - { name: analyse_titre, label: Grand titre de la méthode, type: string }
       - name: analyse_etapes
         label: Étapes de la méthode d'analyse vidéo
