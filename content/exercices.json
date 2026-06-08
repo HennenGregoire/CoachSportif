@@ -45,6 +45,10 @@
     ],
     "consigne_prof": "aide suplementaire "
   },
-  {},
-  {}
+  {
+    "categorie": "course"
+  },
+  {
+    "categorie": "musculation"
+  }
 ]
