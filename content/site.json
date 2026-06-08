@@ -6,30 +6,29 @@
   "bouton_principal": "Voir les exercices",
   "intro_exercices": "description de la page d exercice ",
   "message_prof": "comment ca marche ",
+  "analyse_eyebrow": "Analyse vidéo",
+  "analyse_titre": "Comment utiliser une fiche exercice",
+  "analyse_etapes": [
+    {
+      "numero": "1",
+      "titre": "Observer",
+      "texte": "Regarder la vidéo correcte et repérer les points clés."
+    },
+    {
+      "numero": "2",
+      "titre": "Comparer",
+      "texte": "filmer vous et comparer par rapport a la video "
+    },
+    {
+      "numero": "3",
+      "titre": "Corriger",
+      "texte": "Identifier les erreurs prioritaires puis appliquer les corrections."
+    },
+    {
+      "numero": "4",
+      "titre": "Re-tester",
+      "texte": "Refilmer après correction pour voir si le geste s'améliore."
+    }
+  ],
   "email": "email@example.com"
-  ,
-"analyse_eyebrow": "Analyse vidéo",
-"analyse_titre": "Comment utiliser une fiche exercice",
-"analyse_etapes": [
-  {
-    "numero": "1",
-    "titre": "Observer",
-    "texte": "Regarder la vidéo correcte et repérer les points clés."
-  },
-  {
-    "numero": "2",
-    "titre": "Comparer",
-    "texte": "Filmer l'étudiant de face ou de profil et comparer avec le modèle."
-  },
-  {
-    "numero": "3",
-    "titre": "Corriger",
-    "texte": "Identifier les erreurs prioritaires puis appliquer les corrections."
-  },
-  {
-    "numero": "4",
-    "titre": "Re-tester",
-    "texte": "Refilmer après correction pour voir si le geste s'améliore."
-  }
-]
 }
