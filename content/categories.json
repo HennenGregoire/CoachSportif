@@ -2,19 +2,17 @@
   {
     "nom": "Musculation",
     "slug": "musculation",
-    "description": "Placement, amplitude, respiration et sécurité sur les mouvements de renforcement.",
     "icone": "🏋️"
   },
   {
     "nom": "Natation",
     "slug": "natation",
-    "description": "Alignement, respiration, propulsion et coordination dans l'eau.",
     "icone": "🏊"
   },
   {
     "nom": "Course à pied",
     "slug": "course",
-    "description": "Posture, foulée, appuis, rythme et prévention des blessures.",
+    "description": "description",
     "icone": "🏃"
   }
 ]
