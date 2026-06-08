@@ -37,6 +37,9 @@ function renderSite(site) {
   document.getElementById('intro-exercices').textContent = site.intro_exercices || '';
   document.getElementById('message-prof').textContent = site.message_prof || '';
   document.getElementById('footer-contact').innerHTML = site.email ? `Contact : <a href="mailto:${site.email}">${site.email}</a>` : '';
+  document.getElementById('analyse-eyebrow').textContent = site.analyse_eyebrow || 'Analyse vidéo';
+document.getElementById('analyse-titre').textContent = site.analyse_titre || 'Comment utiliser une fiche exercice';
+renderAnalyseSteps(site.analyse_etapes || []);
 }
 
 function renderFilters() {
