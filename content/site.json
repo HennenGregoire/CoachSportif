@@ -1,10 +1,10 @@
 {
-  "nom_site": "Analyse du mouvement",
-  "sous_titre": "Ressources vidéo pour apprendre, corriger et progresser",
+  "nom_site": "Nomn du site ",
+  "sous_titre": "Sous titre ",
   "professeur": "Prénom Nom",
-  "accroche": "Un espace simple pour les étudiants : exercices filmés, erreurs fréquentes, corrections techniques et ressources de cours.",
+  "accroche": "description du site ",
   "bouton_principal": "Voir les exercices",
-  "email": "email@example.com",
-  "intro_exercices": "Choisis une catégorie, observe la vidéo, compare les erreurs fréquentes et applique les consignes de correction.",
-  "message_prof": "Ce site sert de support pédagogique : il ne remplace pas le cours, mais aide à revoir les gestes, comprendre les corrections et préparer les séances."
+  "intro_exercices": "description de la page d exercice ",
+  "message_prof": "comment ca marche ",
+  "email": "email@example.com"
 }
