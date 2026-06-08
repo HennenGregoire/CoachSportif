@@ -104,8 +104,14 @@ function openExercise(index) {
 
 function renderResources(resources) {
   const box = document.getElementById('resources-list');
+
   box.innerHTML = resources.map(r => {
-    const link = r.fichier || r.lien || '';
+    let link = r.fichier || r.lien || '';
+
+    if (link.startsWith('/assets/')) {
+      link = '/CoachSportif' + link;
+    }
+
     return `<article class="resource"><div><strong>${r.titre}</strong><p>${r.type || ''} — ${r.description || ''}</p></div>${link ? `<a class="button" href="${link}" target="_blank">Ouvrir</a>` : ''}</article>`;
   }).join('');
 }
