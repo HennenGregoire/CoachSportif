@@ -10,11 +10,11 @@ content:
     fields:
       - { name: nom_site, label: Nom du site, type: string }
       - { name: sous_titre, label: Sous-titre, type: string }
-      - { name: professeur, label: Nom du professeur, type: string }
+      - { name: professeur, label: Nom, type: string }
       - { name: accroche, label: Texte d'accueil, type: text }
       - { name: bouton_principal, label: Texte du bouton principal, type: string }
       - { name: intro_exercices, label: Introduction de la page exercices, type: text }
-      - { name: message_prof, label: Message pédagogique, type: text }
+      - { name: message_prof, label: Message descriptif, type: text }
       - { name: analyse_eyebrow, label: Petit titre de la méthode, type: string }
       - { name: analyse_titre, label: Grand titre de la méthode, type: string }
       - name: analyse_etapes
@@ -52,8 +52,7 @@ content:
           values: [musculation, natation, course]
       - { name: niveau, label: Niveau, type: string }
       - { name: objectif, label: Objectif pédagogique, type: text }
-      - { name: video_correcte, label: Lien YouTube vidéo correcte, type: string }
-      - { name: video_erreur, label: Lien YouTube vidéo erreur ou comparaison, type: string, required: false }
+      - { name: video_correcte, label: Lien YouTube vidéo, type: string }
       - { name: image, label: Image optionnelle, type: image, required: false }
       - name: points_cles
         label: Points clés
