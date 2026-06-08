@@ -1,11 +1,10 @@
 {
-  "nom_du_site": "Coach Sportif Papa",
+  "nom_du_site": "lol",
   "sous_titre": "Coaching sportif personnalisé",
   "titre_accueil": "Atteins tes objectifs avec un coach à tes côtés",
   "texte_accueil": "Remise en forme, musculation, perte de poids et accompagnement adapté à ton niveau.",
   "titre_a_propos": "Votre coach sportif",
   "texte_a_propos": "Bonjour, je suis coach sportif. J’accompagne les personnes qui veulent reprendre le sport, progresser, perdre du poids ou gagner en confiance grâce à un programme simple et sérieux.",
-  "photo_a_propos": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=80",
   "texte_contact": "Pour une séance découverte ou une question, contactez-moi directement.",
   "email": "email@example.com",
   "telephone": "04 00 00 00 00",
