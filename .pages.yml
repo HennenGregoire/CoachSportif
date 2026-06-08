@@ -1,110 +1,72 @@
 media:
-  input: assets/images
-  output: /assets/images
+  input: assets
+  output: /assets
 
 content:
   - name: site
-    label: Textes du site
+    label: Textes de la page d'accueil
     type: file
     path: content/site.json
-    format: json
     fields:
-      - name: nom_du_site
-        label: Nom du site
-        type: string
-      - name: sous_titre
-        label: Petit titre en haut
-        type: string
-      - name: titre_accueil
-        label: Grand titre d'accueil
-        type: string
-      - name: texte_accueil
-        label: Texte d'accueil
-        type: text
-      - name: titre_a_propos
-        label: Titre à propos
-        type: string
-      - name: texte_a_propos
-        label: Texte à propos
-        type: text
-      - name: photo_a_propos
-        label: Photo à propos
-        type: image
-      - name: texte_contact
-        label: Texte de contact
-        type: text
-      - name: email
-        label: Email
-        type: string
-      - name: telephone
-        label: Téléphone
-        type: string
-      - name: instagram
-        label: Instagram affiché
-        type: string
-      - name: instagram_url
-        label: Lien Instagram
-        type: string
+      - { name: nom_site, label: Nom du site, type: string }
+      - { name: sous_titre, label: Sous-titre, type: string }
+      - { name: professeur, label: Nom du professeur, type: string }
+      - { name: accroche, label: Texte d'accueil, type: text }
+      - { name: bouton_principal, label: Texte du bouton principal, type: string }
+      - { name: intro_exercices, label: Introduction de la page exercices, type: text }
+      - { name: message_prof, label: Message pédagogique, type: text }
+      - { name: email, label: Email de contact, type: string }
 
-  - name: services
-    label: Services
+  - name: categories
+    label: Catégories sportives
     type: file
-    path: content/services.json
-    format: json
+    path: content/categories.json
     list: true
     fields:
-      - name: titre
-        label: Titre
-        type: string
-      - name: description
-        label: Description
-        type: text
+      - { name: nom, label: Nom, type: string }
+      - { name: slug, label: Identifiant sans accent, type: string, description: "Exemple : musculation, natation, course" }
+      - { name: description, label: Description, type: text }
+      - { name: icone, label: Icône emoji, type: string }
 
-  - name: videos
-    label: Vidéos YouTube
+  - name: exercices
+    label: Exercices et analyses vidéo
     type: file
-    path: content/videos.json
-    format: json
+    path: content/exercices.json
     list: true
     fields:
-      - name: titre
-        label: Titre
+      - { name: titre, label: Titre de l'exercice, type: string }
+      - name: categorie
+        label: Catégorie
+        type: select
+        options:
+          values: [musculation, natation, course]
+      - { name: niveau, label: Niveau, type: string }
+      - { name: objectif, label: Objectif pédagogique, type: text }
+      - { name: video_correcte, label: Lien YouTube vidéo correcte, type: string }
+      - { name: video_erreur, label: Lien YouTube vidéo erreur ou comparaison, type: string, required: false }
+      - { name: image, label: Image optionnelle, type: image, required: false }
+      - name: points_cles
+        label: Points clés
         type: string
-      - name: description
-        label: Description
-        type: text
-      - name: lien_youtube
-        label: Lien YouTube
+        list: true
+      - name: erreurs_frequentes
+        label: Erreurs fréquentes
         type: string
-        description: Collez ici le lien YouTube complet, par exemple https://www.youtube.com/watch?v=...
+        list: true
+      - name: corrections
+        label: Corrections proposées
+        type: string
+        list: true
+      - { name: consigne_prof, label: Consigne du professeur, type: text }
 
-  - name: articles
-    label: Articles / Conseils
+  - name: ressources
+    label: Documents et ressources
     type: file
-    path: content/articles.json
-    format: json
+    path: content/ressources.json
     list: true
     fields:
-      - name: titre
-        label: Titre
-        type: string
-      - name: texte
-        label: Texte
-        type: text
-      - name: image
-        label: Image
-        type: image
-
-  - name: galerie
-    label: Galerie photos
-    type: file
-    path: content/galerie.json
-    format: json
-    list: true
-    fields:
-      - name: image
-        label: Image
-        type: image
-      - name: alt
-        label: Description courte de l'image
-        type: string
+      - { name: titre, label: Titre, type: string }
+      - { name: type, label: Type, type: string, description: "PDF, grille, lien, consigne, etc." }
+      - { name: description, label: Description, type: text }
+      - { name: lien, label: Lien externe, type: string, required: false }
+      - { name: fichier, label: Fichier PDF ou document, type: file, required: false }
