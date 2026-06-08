@@ -91,14 +91,13 @@ function openExercise(index) {
     <p class="eyebrow">${categoryName(e.categorie)} • ${e.niveau || ''}</p>
     <h2>${e.titre}</h2>
     <p>${e.objectif || ''}</p>
-    ${id1 ? `<h3>Vidéo modèle</h3><div class="video-wrap"><iframe src="https://www.youtube.com/embed/${id1}" allowfullscreen></iframe></div>` : ''}
-    ${id2 ? `<h3>Erreur à analyser</h3><div class="video-wrap"><iframe src="https://www.youtube.com/embed/${id2}" allowfullscreen></iframe></div>` : ''}
+    ${id1 ? `<h3>Vidéo</h3><div class="video-wrap"><iframe src="https://www.youtube.com/embed/${id1}" allowfullscreen></iframe></div>` : ''}
     <div class="columns">
       <div class="panel"><h4>Points clés</h4>${list(e.points_cles)}</div>
       <div class="panel"><h4>Erreurs fréquentes</h4>${list(e.erreurs_frequentes)}</div>
       <div class="panel"><h4>Corrections proposées</h4>${list(e.corrections)}</div>
     </div>
-    <div class="panel" style="margin-top:18px"><h4>Consigne du professeur</h4><p>${e.consigne_prof || ''}</p></div>
+    <div class="panel" style="margin-top:18px"><h4>Aide suplementaire</h4><p>${e.consigne_prof || ''}</p></div>
   `;
   document.getElementById('modal').classList.add('show');
 }
