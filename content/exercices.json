@@ -1,77 +1,50 @@
 [
   {
-    "titre": "Squat : placement du dos et des genoux",
+    "titre": "Titre de l exercice ",
     "categorie": "musculation",
     "niveau": "Débutant",
-    "objectif": "Comprendre le placement correct sur un squat et éviter les compensations.",
+    "objectif": "objectif de l exercice ",
     "video_correcte": "https://www.youtube.com/watch?v=aclHkVaku9U",
-    "video_erreur": "",
-    "image": "",
     "points_cles": [
-      "Pieds stables au sol",
-      "Genoux orientés dans l'axe des pieds",
-      "Dos gainé pendant tout le mouvement"
+      "point 1",
+      "point 2 ",
+      "point 3"
     ],
     "erreurs_frequentes": [
-      "Genoux qui rentrent vers l'intérieur",
-      "Talons qui décollent",
-      "Dos qui s'arrondit en bas du mouvement"
+      "erreur 1 ",
+      "erreur 2",
+      "erreur 3"
     ],
     "corrections": [
-      "Réduire l'amplitude au début",
-      "Travailler devant un miroir ou avec retour vidéo",
-      "Utiliser un tempo lent pour contrôler la descente"
+      "correction 1",
+      "correction 2 ",
+      "correction 3"
     ],
-    "consigne_prof": "Filmez-vous de profil et de face. Comparez votre posture avec les points clés avant de charger davantage."
+    "consigne_prof": "aide suplementaire "
   },
   {
-    "titre": "Crawl : respiration latérale",
+    "titre": "Titre de l exercice ",
     "categorie": "natation",
     "niveau": "Intermédiaire",
-    "objectif": "Améliorer la rotation de la tête sans casser l'alignement du corps.",
+    "objectif": "objectif de l exercice ",
     "video_correcte": "https://www.youtube.com/watch?v=5HLW2AI1Ink",
-    "video_erreur": "",
-    "image": "",
     "points_cles": [
-      "Regard orienté légèrement vers le bas",
-      "Rotation du corps accompagnant la respiration",
-      "Expiration continue dans l'eau"
+      "Point 1",
+      "Point 2",
+      "Point 3"
     ],
     "erreurs_frequentes": [
-      "Lever trop haut la tête",
-      "Arrêter de battre des jambes pendant la respiration",
-      "Respirer trop tard dans le mouvement"
+      "Erreur 1",
+      "Erreur 2",
+      "Erreur 3"
     ],
     "corrections": [
-      "Travailler avec planche sur le côté",
-      "Exagérer doucement la rotation de l'épaule",
-      "Compter les temps de respiration"
+      "Correction 1",
+      "Correction 2",
+      "Correction 3"
     ],
-    "consigne_prof": "Cherchez une respiration discrète : la bouche sort de l'eau, mais la tête ne se soulève pas."
+    "consigne_prof": "aide suplementaire "
   },
-  {
-    "titre": "Course : posture et attaque du pied",
-    "categorie": "course",
-    "niveau": "Tous niveaux",
-    "objectif": "Observer la posture générale et réduire les impacts inutiles.",
-    "video_correcte": "https://www.youtube.com/watch?v=brFHyOtTwH4",
-    "video_erreur": "",
-    "image": "",
-    "points_cles": [
-      "Buste grand et légèrement incliné",
-      "Regard loin devant",
-      "Appui proche du centre de gravité"
-    ],
-    "erreurs_frequentes": [
-      "Foulée trop longue devant soi",
-      "Épaules crispées",
-      "Bras qui croisent devant le corps"
-    ],
-    "corrections": [
-      "Augmenter légèrement la cadence",
-      "Faire des gammes : montées de genoux, talons-fesses, foulées bondissantes",
-      "Filmer 10 secondes de profil"
-    ],
-    "consigne_prof": "Analysez surtout la position du pied à l'impact : il doit se poser proche du corps, pas loin devant."
-  }
+  {},
+  {}
 ]
