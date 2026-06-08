@@ -3,80 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coach Sportif</title>
-  <meta name="description" content="Coaching sportif personnalisé" />
+  <title>Analyse du mouvement</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero" id="accueil">
-    <nav class="navbar">
-      <a class="logo" href="#accueil" id="site-logo">Coach Sportif</a>
-      <div class="nav-links">
-        <a href="#apropos">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#videos">Vidéos</a>
-        <a href="#articles">Conseils</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-    <div class="hero-content">
-      <p class="eyebrow" id="hero-subtitle">Coaching personnalisé</p>
-      <h1 id="hero-title">Atteins tes objectifs avec un coach à tes côtés</h1>
-      <p id="hero-text">Programmes adaptés, suivi sérieux et conseils simples pour progresser durablement.</p>
-      <a class="button" href="#contact">Me contacter</a>
+<header class="topbar">
+  <a class="brand" href="#accueil">Analyse du mouvement</a>
+  <nav>
+    <a href="#exercices">Exercices</a>
+    <a href="#analyse">Méthode</a>
+    <a href="#ressources">Ressources</a>
+  </nav>
+</header>
+
+<main>
+  <section id="accueil" class="hero">
+    <div class="hero-text">
+      <p class="eyebrow" id="professeur"></p>
+      <h1 id="nom-site">Analyse du mouvement</h1>
+      <p id="accroche"></p>
+      <a class="button" href="#exercices" id="bouton-principal">Voir les exercices</a>
     </div>
-  </header>
+    <div class="hero-card">
+      <span>🎥</span>
+      <h2>Observer → Comprendre → Corriger</h2>
+      <p id="message-prof"></p>
+    </div>
+  </section>
 
-  <main>
-    <section id="apropos" class="section about">
-      <div>
-        <p class="eyebrow">À propos</p>
-        <h2 id="about-title">Votre coach sportif</h2>
-        <p id="about-text"></p>
-      </div>
-      <img id="about-image" alt="Coach sportif" />
-    </section>
+  <section id="exercices" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Bibliothèque pédagogique</p>
+      <h2>Exercices par catégorie</h2>
+      <p id="intro-exercices"></p>
+    </div>
+    <div id="category-filters" class="filters"></div>
+    <div id="exercise-grid" class="exercise-grid"></div>
+  </section>
 
-    <section id="services" class="section">
-      <p class="eyebrow">Services</p>
-      <h2>Accompagnement proposé</h2>
-      <div class="cards" id="services-list"></div>
-    </section>
+  <section id="analyse" class="section muted">
+    <div class="section-head">
+      <p class="eyebrow">Analyse vidéo</p>
+      <h2>Comment utiliser une fiche exercice</h2>
+    </div>
+    <div class="steps">
+      <article><strong>1</strong><h3>Observer</h3><p>Regarder la vidéo correcte et repérer les points clés.</p></article>
+      <article><strong>2</strong><h3>Comparer</h3><p>Filmer l'étudiant de face ou de profil et comparer avec le modèle.</p></article>
+      <article><strong>3</strong><h3>Corriger</h3><p>Identifier une ou deux erreurs prioritaires, puis appliquer les exercices proposés.</p></article>
+      <article><strong>4</strong><h3>Re-tester</h3><p>Refilmer après correction pour voir si le geste s'améliore.</p></article>
+    </div>
+  </section>
 
-    <section id="videos" class="section dark-section">
-      <p class="eyebrow">Vidéos</p>
-      <h2>Exercices et conseils vidéo</h2>
-      <div class="grid" id="videos-list"></div>
-    </section>
+  <section id="ressources" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Supports de cours</p>
+      <h2>Documents et ressources</h2>
+    </div>
+    <div id="resources-list" class="resources"></div>
+  </section>
+</main>
 
-    <section id="articles" class="section">
-      <p class="eyebrow">Conseils</p>
-      <h2>Articles récents</h2>
-      <div class="grid" id="articles-list"></div>
-    </section>
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="close" id="close-modal">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
 
-    <section id="galerie" class="section">
-      <p class="eyebrow">Galerie</p>
-      <h2>Photos</h2>
-      <div class="gallery" id="gallery-list"></div>
-    </section>
+<footer>
+  <p id="footer-contact"></p>
+</footer>
 
-    <section id="contact" class="section contact">
-      <p class="eyebrow">Contact</p>
-      <h2>Prendre rendez-vous</h2>
-      <p id="contact-text"></p>
-      <div class="contact-box">
-        <p><strong>Email :</strong> <a id="contact-email"></a></p>
-        <p><strong>Téléphone :</strong> <a id="contact-phone"></a></p>
-        <p><strong>Instagram :</strong> <a id="contact-instagram" target="_blank"></a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p id="footer-text">© Coach Sportif</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
