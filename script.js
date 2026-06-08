@@ -1,97 +1,114 @@
-const $ = (id) => document.getElementById(id);
+const files = {
+  site: 'content/site.json',
+  categories: 'content/categories.json',
+  exercices: 'content/exercices.json',
+  ressources: 'content/ressources.json'
+};
+let allExercises = [];
+let categories = [];
 
-async function loadJSON(path) {
-  const response = await fetch(path + '?v=' + Date.now());
-  if (!response.ok) throw new Error(`Impossible de charger ${path}`);
-  return response.json();
+async function loadJson(path) {
+  const res = await fetch(path + '?v=' + Date.now());
+  if (!res.ok) throw new Error('Impossible de charger ' + path);
+  return res.json();
 }
 
-function youtubeEmbedUrl(urlOrId) {
-  if (!urlOrId) return '';
-  const value = urlOrId.trim();
-  if (!value.includes('http')) return `https://www.youtube.com/embed/${value}`;
-  try {
-    const url = new URL(value);
-    if (url.hostname.includes('youtu.be')) return `https://www.youtube.com/embed/${url.pathname.slice(1)}`;
-    const id = url.searchParams.get('v');
-    if (id) return `https://www.youtube.com/embed/${id}`;
-    if (url.pathname.includes('/shorts/')) return `https://www.youtube.com/embed/${url.pathname.split('/shorts/')[1].split('/')[0]}`;
-    if (url.pathname.includes('/embed/')) return value;
-  } catch (e) {}
-  return value;
+function youtubeId(url) {
+  if (!url) return '';
+  const patterns = [/youtu\.be\/([^?&]+)/, /v=([^?&]+)/, /embed\/([^?&]+)/];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return url;
+}
+
+function list(items) {
+  return `<ul>${(items || []).map(item => `<li>${item}</li>`).join('')}</ul>`;
 }
 
 function renderSite(site) {
-  document.title = site.nom_du_site || 'Coach Sportif';
-  $('site-logo').textContent = site.nom_du_site || 'Coach Sportif';
-  $('hero-subtitle').textContent = site.sous_titre || '';
-  $('hero-title').textContent = site.titre_accueil || '';
-  $('hero-text').textContent = site.texte_accueil || '';
-  $('about-title').textContent = site.titre_a_propos || '';
-  $('about-text').textContent = site.texte_a_propos || '';
-  $('about-image').src = site.photo_a_propos || 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80';
-  $('contact-text').textContent = site.texte_contact || '';
-  $('contact-email').textContent = site.email || '';
-  $('contact-email').href = `mailto:${site.email || ''}`;
-  $('contact-phone').textContent = site.telephone || '';
-  $('contact-phone').href = `tel:${(site.telephone || '').replaceAll(' ', '')}`;
-  $('contact-instagram').textContent = site.instagram || '';
-  $('contact-instagram').href = site.instagram_url || '#';
-  $('footer-text').textContent = `© ${new Date().getFullYear()} ${site.nom_du_site || 'Coach Sportif'}`;
+  document.title = site.nom_site || 'Analyse du mouvement';
+  document.querySelector('.brand').textContent = site.nom_site;
+  document.getElementById('nom-site').textContent = site.nom_site;
+  document.getElementById('professeur').textContent = site.professeur || '';
+  document.getElementById('accroche').textContent = site.accroche || '';
+  document.getElementById('bouton-principal').textContent = site.bouton_principal || 'Voir les exercices';
+  document.getElementById('intro-exercices').textContent = site.intro_exercices || '';
+  document.getElementById('message-prof').textContent = site.message_prof || '';
+  document.getElementById('footer-contact').innerHTML = site.email ? `Contact : <a href="mailto:${site.email}">${site.email}</a>` : '';
 }
 
-function renderServices(services) {
-  $('services-list').innerHTML = services.map(service => `
+function renderFilters() {
+  const box = document.getElementById('category-filters');
+  box.innerHTML = `<button class="filter active" data-cat="all">Tout</button>` +
+    categories.map(c => `<button class="filter" data-cat="${c.slug}">${c.icone || ''} ${c.nom}</button>`).join('');
+  box.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
+    box.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderExercises(btn.dataset.cat);
+  }));
+}
+
+function categoryName(slug) {
+  const cat = categories.find(c => c.slug === slug);
+  return cat ? cat.nom : slug;
+}
+
+function renderExercises(filter = 'all') {
+  const grid = document.getElementById('exercise-grid');
+  const data = filter === 'all' ? allExercises : allExercises.filter(e => e.categorie === filter);
+  grid.innerHTML = data.map((e, index) => `
     <article class="card">
-      <h3>${service.titre || ''}</h3>
-      <p>${service.description || ''}</p>
+      <span class="tag">${categoryName(e.categorie)} • ${e.niveau || ''}</span>
+      <h3>${e.titre}</h3>
+      <p>${e.objectif || ''}</p>
+      <button data-index="${allExercises.indexOf(e)}">Ouvrir l'analyse</button>
     </article>
   `).join('');
+  grid.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => openExercise(Number(btn.dataset.index))));
 }
 
-function renderVideos(videos) {
-  $('videos-list').innerHTML = videos.map(video => `
-    <article class="card video">
-      <iframe src="${youtubeEmbedUrl(video.lien_youtube)}" title="${video.titre || 'Vidéo'}" allowfullscreen></iframe>
-      <h3>${video.titre || ''}</h3>
-      <p>${video.description || ''}</p>
-    </article>
-  `).join('');
+function openExercise(index) {
+  const e = allExercises[index];
+  const id1 = youtubeId(e.video_correcte);
+  const id2 = youtubeId(e.video_erreur);
+  document.getElementById('modal-content').innerHTML = `
+    <p class="eyebrow">${categoryName(e.categorie)} • ${e.niveau || ''}</p>
+    <h2>${e.titre}</h2>
+    <p>${e.objectif || ''}</p>
+    ${id1 ? `<h3>Vidéo modèle</h3><div class="video-wrap"><iframe src="https://www.youtube.com/embed/${id1}" allowfullscreen></iframe></div>` : ''}
+    ${id2 ? `<h3>Erreur à analyser</h3><div class="video-wrap"><iframe src="https://www.youtube.com/embed/${id2}" allowfullscreen></iframe></div>` : ''}
+    <div class="columns">
+      <div class="panel"><h4>Points clés</h4>${list(e.points_cles)}</div>
+      <div class="panel"><h4>Erreurs fréquentes</h4>${list(e.erreurs_frequentes)}</div>
+      <div class="panel"><h4>Corrections proposées</h4>${list(e.corrections)}</div>
+    </div>
+    <div class="panel" style="margin-top:18px"><h4>Consigne du professeur</h4><p>${e.consigne_prof || ''}</p></div>
+  `;
+  document.getElementById('modal').classList.add('show');
 }
 
-function renderArticles(articles) {
-  $('articles-list').innerHTML = articles.map(article => `
-    <article class="card">
-      ${article.image ? `<img src="${article.image}" alt="${article.titre || 'Article'}">` : ''}
-      <h3>${article.titre || ''}</h3>
-      <p>${article.texte || ''}</p>
-    </article>
-  `).join('');
+function renderResources(resources) {
+  const box = document.getElementById('resources-list');
+  box.innerHTML = resources.map(r => {
+    const link = r.fichier || r.lien || '';
+    return `<article class="resource"><div><strong>${r.titre}</strong><p>${r.type || ''} — ${r.description || ''}</p></div>${link ? `<a class="button" href="${link}" target="_blank">Ouvrir</a>` : ''}</article>`;
+  }).join('');
 }
 
-function renderGallery(images) {
-  $('gallery-list').innerHTML = images.map(item => `
-    <img src="${item.image}" alt="${item.alt || 'Photo'}">
-  `).join('');
-}
+document.getElementById('close-modal').addEventListener('click', () => document.getElementById('modal').classList.remove('show'));
+document.getElementById('modal').addEventListener('click', e => { if (e.target.id === 'modal') e.currentTarget.classList.remove('show'); });
 
 async function init() {
-  try {
-    const [site, services, videos, articles, gallery] = await Promise.all([
-      loadJSON('content/site.json'),
-      loadJSON('content/services.json'),
-      loadJSON('content/videos.json'),
-      loadJSON('content/articles.json'),
-      loadJSON('content/galerie.json')
-    ]);
-    renderSite(site);
-    renderServices(services);
-    renderVideos(videos);
-    renderArticles(articles);
-    renderGallery(gallery);
-  } catch (error) {
-    console.error(error);
-  }
+  const [site, cats, exercises, resources] = await Promise.all([
+    loadJson(files.site), loadJson(files.categories), loadJson(files.exercices), loadJson(files.ressources)
+  ]);
+  categories = cats;
+  allExercises = exercises;
+  renderSite(site);
+  renderFilters();
+  renderExercises();
+  renderResources(resources);
 }
-
-init();
+init().catch(err => document.body.innerHTML = `<main class="section"><h1>Erreur</h1><p>${err.message}</p></main>`);
