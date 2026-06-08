@@ -41,6 +41,17 @@ function renderSite(site) {
 document.getElementById('analyse-titre').textContent = site.analyse_titre || 'Comment utiliser une fiche exercice';
 renderAnalyseSteps(site.analyse_etapes || []);
 }
+function renderAnalyseSteps(steps) {
+  const box = document.getElementById('analyse-steps');
+
+  box.innerHTML = steps.map((step, i) => `
+    <article>
+      <strong>${step.numero || i + 1}</strong>
+      <h3>${step.titre || ''}</h3>
+      <p>${step.texte || ''}</p>
+    </article>
+  `).join('');
+}
 
 function renderFilters() {
   const box = document.getElementById('category-filters');
