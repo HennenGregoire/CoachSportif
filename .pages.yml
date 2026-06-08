@@ -1,0 +1,110 @@
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: site
+    label: Textes du site
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: nom_du_site
+        label: Nom du site
+        type: string
+      - name: sous_titre
+        label: Petit titre en haut
+        type: string
+      - name: titre_accueil
+        label: Grand titre d'accueil
+        type: string
+      - name: texte_accueil
+        label: Texte d'accueil
+        type: text
+      - name: titre_a_propos
+        label: Titre à propos
+        type: string
+      - name: texte_a_propos
+        label: Texte à propos
+        type: text
+      - name: photo_a_propos
+        label: Photo à propos
+        type: image
+      - name: texte_contact
+        label: Texte de contact
+        type: text
+      - name: email
+        label: Email
+        type: string
+      - name: telephone
+        label: Téléphone
+        type: string
+      - name: instagram
+        label: Instagram affiché
+        type: string
+      - name: instagram_url
+        label: Lien Instagram
+        type: string
+
+  - name: services
+    label: Services
+    type: file
+    path: content/services.json
+    format: json
+    list: true
+    fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: description
+        label: Description
+        type: text
+
+  - name: videos
+    label: Vidéos YouTube
+    type: file
+    path: content/videos.json
+    format: json
+    list: true
+    fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: lien_youtube
+        label: Lien YouTube
+        type: string
+        description: Collez ici le lien YouTube complet, par exemple https://www.youtube.com/watch?v=...
+
+  - name: articles
+    label: Articles / Conseils
+    type: file
+    path: content/articles.json
+    format: json
+    list: true
+    fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: texte
+        label: Texte
+        type: text
+      - name: image
+        label: Image
+        type: image
+
+  - name: galerie
+    label: Galerie photos
+    type: file
+    path: content/galerie.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Image
+        type: image
+      - name: alt
+        label: Description courte de l'image
+        type: string
