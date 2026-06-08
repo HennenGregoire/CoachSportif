@@ -1,0 +1,77 @@
+[
+  {
+    "titre": "Squat : placement du dos et des genoux",
+    "categorie": "musculation",
+    "niveau": "Débutant",
+    "objectif": "Comprendre le placement correct sur un squat et éviter les compensations.",
+    "video_correcte": "https://www.youtube.com/watch?v=aclHkVaku9U",
+    "video_erreur": "",
+    "image": "",
+    "points_cles": [
+      "Pieds stables au sol",
+      "Genoux orientés dans l'axe des pieds",
+      "Dos gainé pendant tout le mouvement"
+    ],
+    "erreurs_frequentes": [
+      "Genoux qui rentrent vers l'intérieur",
+      "Talons qui décollent",
+      "Dos qui s'arrondit en bas du mouvement"
+    ],
+    "corrections": [
+      "Réduire l'amplitude au début",
+      "Travailler devant un miroir ou avec retour vidéo",
+      "Utiliser un tempo lent pour contrôler la descente"
+    ],
+    "consigne_prof": "Filmez-vous de profil et de face. Comparez votre posture avec les points clés avant de charger davantage."
+  },
+  {
+    "titre": "Crawl : respiration latérale",
+    "categorie": "natation",
+    "niveau": "Intermédiaire",
+    "objectif": "Améliorer la rotation de la tête sans casser l'alignement du corps.",
+    "video_correcte": "https://www.youtube.com/watch?v=5HLW2AI1Ink",
+    "video_erreur": "",
+    "image": "",
+    "points_cles": [
+      "Regard orienté légèrement vers le bas",
+      "Rotation du corps accompagnant la respiration",
+      "Expiration continue dans l'eau"
+    ],
+    "erreurs_frequentes": [
+      "Lever trop haut la tête",
+      "Arrêter de battre des jambes pendant la respiration",
+      "Respirer trop tard dans le mouvement"
+    ],
+    "corrections": [
+      "Travailler avec planche sur le côté",
+      "Exagérer doucement la rotation de l'épaule",
+      "Compter les temps de respiration"
+    ],
+    "consigne_prof": "Cherchez une respiration discrète : la bouche sort de l'eau, mais la tête ne se soulève pas."
+  },
+  {
+    "titre": "Course : posture et attaque du pied",
+    "categorie": "course",
+    "niveau": "Tous niveaux",
+    "objectif": "Observer la posture générale et réduire les impacts inutiles.",
+    "video_correcte": "https://www.youtube.com/watch?v=brFHyOtTwH4",
+    "video_erreur": "",
+    "image": "",
+    "points_cles": [
+      "Buste grand et légèrement incliné",
+      "Regard loin devant",
+      "Appui proche du centre de gravité"
+    ],
+    "erreurs_frequentes": [
+      "Foulée trop longue devant soi",
+      "Épaules crispées",
+      "Bras qui croisent devant le corps"
+    ],
+    "corrections": [
+      "Augmenter légèrement la cadence",
+      "Faire des gammes : montées de genoux, talons-fesses, foulées bondissantes",
+      "Filmer 10 secondes de profil"
+    ],
+    "consigne_prof": "Analysez surtout la position du pied à l'impact : il doit se poser proche du corps, pas loin devant."
+  }
+]
