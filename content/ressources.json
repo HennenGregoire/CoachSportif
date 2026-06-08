@@ -1,16 +1,14 @@
 [
   {
-    "titre": "Grille d'analyse vidéo",
-    "type": "Document",
-    "description": "Exemple de grille pour observer un geste : posture, rythme, alignement, correction proposée.",
-    "lien": "",
-    "fichier": ""
+    "titre": "Portfolio gregoire",
+    "type": "site web ",
+    "description": "voici mon portfolio de tech art ",
+    "lien": "https://hennengregoire.github.io/Portfolio/index.html"
   },
   {
-    "titre": "Consignes pour filmer un exercice",
-    "type": "Méthode",
-    "description": "Filmer de face et de profil, 10 à 20 secondes, lumière correcte, corps entier visible.",
-    "lien": "",
-    "fichier": ""
+    "titre": "rapport individuel",
+    "type": "PDF",
+    "description": "voici mon rapport individuel ",
+    "fichier": "/assets/RAPPORT INDIVIDUEL tfc.pdf"
   }
 ]
